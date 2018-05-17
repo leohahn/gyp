@@ -1256,6 +1256,8 @@ class NinjaWriter(object):
       libraries = self.xcode_settings.AdjustLibraries(libraries, config_name)
     elif self.flavor == 'win':
       libraries = self.msvs_settings.AdjustLibraries(libraries)
+    print 'Adjusted libraries'
+    print libraries
 
     self.WriteVariableList(ninja_file, 'libs', library_dirs + libraries)
 
